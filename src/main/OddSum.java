@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class OddSum {
 
     public static void main(String[] args) {
-        run(args, false);
+            run(args, false);
     }
 
     public static int run(String[] args, boolean test) {
@@ -17,7 +17,11 @@ public class OddSum {
             System.out.println();
         }
         for (int i = 0; i < args.length; i++) {
-            listInt.add(Integer.parseInt(args[i]));
+            try {
+                listInt.add(Integer.parseInt(args[i]));
+            } catch (NumberFormatException e) {
+                return -1;
+            }
         }
 
         res = sum(listInt);
@@ -30,6 +34,7 @@ public class OddSum {
 
         return 0;
     }
+
 
     public static int sum(ArrayList<Integer> listInt) {
 
